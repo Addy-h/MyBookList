@@ -73,9 +73,10 @@ class store{
     }
     static removeBook(isbn) {
       const books = store.getBooks();
-      books.forEach((books, index) => {
-          if(books.isbn === isbn){
+      books.forEach((book, index) => {
+          if(book.isbn === isbn){
               books.splice(index, 1);
+              
          }
       });
       localStorage.setItem('books', JSON.stringify(books));
